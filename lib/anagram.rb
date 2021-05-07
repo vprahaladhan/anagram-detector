@@ -12,9 +12,7 @@ class Anagram
     end
 
     word_a.split("").uniq.each do |char| 
-      if word_a.count(char) != word_b.count(char) then 
-        return false
-      end
+      word_a.count(char) != word_b.count(char) && return false
     end
 
     true

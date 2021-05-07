@@ -10,14 +10,8 @@ class Anagram
     anagrams = []
     array_of_words.each do |word|
       anagram = true
-      if (word.strip.size == @word.size) then 
-        @word.split("").uniq.each do |char|
-          if (@word.count(char) != word.count(char)) then
-            anagram = false
-          end
-        end
-      else anagram = false
-      end
+      word.strip.size == @word.size ? 
+        @word.split("").uniq.each { |char| @word.count(char) != word.count(char) && anagram = false } : anagram = false
       anagram ? anagrams << word : ''  
     end
     anagrams
